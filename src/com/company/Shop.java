@@ -4,7 +4,19 @@ public class Shop {
     public static void main(String[] args) {
 
         Client client = new Client();
-        Machine SuzukiJimny = new Machine();
+
+        client.name = "Ivan";
+        client.surname = "Ivanov";
+        client.middleName = "Ivanov";
+        client.age = 19;
+        client.credit = true;
+        client.money = 10000;
+
+        Machine suzukiJimny = new Machine();
+
+        suzukiJimny.name = "Suzuki Jimny";
+        suzukiJimny.amount = 3;
+        suzukiJimny.price = 650_900;
 
         int minAge = 18;
 
@@ -13,14 +25,14 @@ public class Shop {
             return;
         }
 
-        if (client.money >= SuzukiJimny.price) {
+        if (client.money >= suzukiJimny.price) {
 
             congratulations();
             return;
 
         } else {
             if (client.credit) {
-                int lastSumm = SuzukiJimny.price - client.money;
+                int lastSumm = suzukiJimny.price - client.money;
                 int monthPay = lastSumm / 36;
                 System.out.println("Поздравляем! Кредит оформлен. Ежемесячный платеж " + monthPay);
                 congratulations();
